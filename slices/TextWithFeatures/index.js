@@ -1,9 +1,9 @@
-import NextImage from "next/image";
-import { PrismicRichText } from "@prismicio/react";
-import * as prismicH from "@prismicio/helpers";
+import NextImage from 'next/image'
+import { PrismicRichText } from '@prismicio/react'
+import * as prismicH from '@prismicio/helpers'
 
-import { Bounded } from "../../components/Bounded";
-import { Heading } from "../../components/Heading";
+import { Bounded } from '../../components/Bounded'
+import { Heading } from '../../components/Heading'
 
 const TextWithFeatures = ({ slice }) => {
   return (
@@ -28,6 +28,11 @@ const TextWithFeatures = ({ slice }) => {
                     {children}
                   </Heading>
                 ),
+                heading2: ({ children }) => (
+                  <Heading as="h3" size="2xl" className="mb-2 last:mb-0">
+                    {children}
+                  </Heading>
+                ),
               }}
             />
           </div>
@@ -41,6 +46,11 @@ const TextWithFeatures = ({ slice }) => {
               <PrismicRichText
                 field={item.featureDescription}
                 components={{
+                  heading2: ({ children }) => (
+                    <Heading as="h3" size="2xl" className="mb-2 last:mb-0">
+                      {children}
+                    </Heading>
+                  ),
                   heading3: ({ children }) => (
                     <Heading as="h3" size="2xl" className="mb-2 last:mb-0">
                       {children}
@@ -53,8 +63,7 @@ const TextWithFeatures = ({ slice }) => {
         </ul>
       </div>
     </Bounded>
-  );
-};
+  )
+}
 
-export default TextWithFeatures;
-
+export default TextWithFeatures
